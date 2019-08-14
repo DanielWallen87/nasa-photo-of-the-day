@@ -10,13 +10,13 @@ const CreateEntry = () => {
 
     useEffect(() => {
         axios
-            .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+            .get('https://api.nasa.gov/planetary/apod?api_key=D15zpNbrT5kUItMw4iPhxpHkNqprKnQh6h7LIOCJ')
             .then(response => {
                 setTitle(response.data.title);
                 setDate(response.data.date);
                 setPhotoSource(response.data.url);
                 setBlogText(response.data.explanation);
-                console.log(response);
+                //console.log(response);
             });
     }, []);
 
