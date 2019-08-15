@@ -1,45 +1,30 @@
 import React from "react";
-import CreateEntry from "./CreateEntry";
-import styled from "styled-components";
+
+import Title from "../components/Title";
+import Image from "../components/Image";
+import Date from "../components/Date";
+import Blog from "../components/Blog";
+
 // import Lettering from "../components/Lettering";
 
 // Props only needs to be typed on the RECEIVING component. Like genes. You inherit from parents.
-const Title = styled.h1`
-    font-size: 3em;
-`
-
-const Image = styled.img`
-    width: 100vw;
-    height: 100vh;
-`;
-
-const Date = styled.h3`
-    font-size: 2em;
-`;
-
-const Blog = styled.p`
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin: 40px;
-    text-align: left;
-`;
 
 const Entry = props => {
     return (
         <div className="entry">
             
-            <Title>{props.title}</Title>
+            <Title title={props.title} />
 
-            {/* <Lettering lettering={props.title} /> */}
+            <Image image={props.image} />
 
-            <Image src={props.image} />
+            <Date date={props.date} />
 
-            <Date>{props.day}</Date>
-
-            <Blog>{props.text}</Blog>
+            <Blog blog={props.blog} />
 
         </div>
     )
 }
 
 export default Entry;
+
+// Entry translates the styles/text from components into blogs.

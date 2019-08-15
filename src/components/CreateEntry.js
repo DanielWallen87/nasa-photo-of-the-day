@@ -5,7 +5,7 @@ import Entry from "./Entry";
 const CreateEntry = () => {
     const [title, setTitle] = useState();
     const [date, setDate] = useState();
-    const [photo, setPhotoSource] = useState();
+    const [image, setImageSource] = useState();
     const [blog, setBlogText] = useState();
 
         useEffect(() => {
@@ -14,7 +14,7 @@ const CreateEntry = () => {
                 .then(response => {
                     setTitle(response.data.title);
                     setDate(response.data.date);
-                    setPhotoSource(response.data.url);
+                    setImageSource(response.data.url);
                     setBlogText(response.data.explanation);
                     console.log(response);
                 });
@@ -22,7 +22,7 @@ const CreateEntry = () => {
 
         return (
             <div className="container">
-                <Entry title = {title} image = {photo} day = {date} text = {blog} /> 
+                <Entry title = {title} image = {image} date = {date} blog = {blog} /> 
                 {/* ^ this "prop" must match the one being passed down on "entry" */}
             </div>
         );
@@ -30,3 +30,7 @@ const CreateEntry = () => {
 }
 
 export default CreateEntry;
+
+// CreateEntry grabs data from axios and sets their state.
+
+// Container info is being passed up from the "Entry" div.
