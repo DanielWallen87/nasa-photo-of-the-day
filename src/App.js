@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import CreateEntry from "./components/CreateEntry";
 
 function App() {
+
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <CreateEntry />
     </div>
   );
 }
 
 export default App;
+
+// App converts data received from "CreateEntry" into a view.
